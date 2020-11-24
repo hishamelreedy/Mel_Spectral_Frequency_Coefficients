@@ -1,12 +1,12 @@
 # Mel_Spectral_Frequency_Coefficients
 # %% [markdown]
-# # MFCC theory and implementation
-# ## Theory
+# MFCC theory and implementation
+# Theory
 # Mel Frequency Cepstral Coefficents (MFCCs) is a way of extracting features from an audio. The MFCC uses the MEL scale to divide the frequency band to sub-bands and then extracts the Cepstral Coefficents using Discrete Cosine Transform (DCT). MEL scale is based on the way humans distinguish between frequencies which makes it very convenient to process sounds.
 # 
 # Lets first understand how humans perceive sounds.
 # 
-# ## Human voice sound perception
+# Human voice sound perception
 # Adult humans fundamental voice frequency range is between 85Hz to 255Hz (85Hz to 180Hz for male and 165Hz to 255Hz for female). On top of the fundamental frequency there are harmonics of fundamental frequencys. Harmonics are whole multiplications of the fundamental frequency. If for instance the fundamental frequency is 100Hz then its second harmonic will be 200Hz, third harmonic is 300Hz and so on.
 # 
 # You can see an example in the image below [1] which shows frequency vs. time of several pronounced words and color represents frequency power at that point (yellow strongest and black weakest):
@@ -67,7 +67,7 @@ plt.grid(True)
 # %% [markdown]
 # There is a lot going on here. It sounds that we should get high and low fundamental frequencies.
 # 
-# ## Audio Framing
+# Audio Framing
 # Because audio is a non stationary process, the FFT will produce distortions. To overcome this we can assume that the audio is a stationary process for a short periods of time. Because of that we devide the signal into short frames. Each audio frame will be the same size as the FFT. Also we want the frames to overlap. We do that so that the frames will have some correlation between them and because we loose the information on the edges of each frame after applying a window function.
 
 # %% [code]
@@ -103,7 +103,7 @@ print("Last frame:")
 audio_framed[-1]
 
 # %% [markdown]
-# ## Convert to frequency domain
+# Convert to frequency domain
 # Now we will convert the audio, which is currently in the time domain, to frequency domain. The FFT assumes the audio to be periodic and continues. By framing the signal we assured the audio to be periodic. To make the audio continues, we apply a window function on every frame. If we wont do that, We will get high frequency distortions. To overcome this, we first need to apply a window function to the framed audio and then perforn FFT. The window assures that both ends of the signal will end close to zero.
 # 
 # Choosing the correct window is hard and takes time. For simplicity we will choose the Hanning window. [7]
@@ -133,7 +133,7 @@ plt.grid(True)
 # 
 # Now lets perform the FFT. After we do the FFT we only take the the positive part of the spectrum (first half +1).
 
-# %% [code]
+>
 audio_winT = np.transpose(audio_win)
 
 audio_fft = np.empty((int(1 + FFT_size // 2), audio_winT.shape[1]), dtype=np.complex64, order='F')
@@ -143,7 +143,6 @@ for n in range(audio_fft.shape[1]):
 
 audio_fft = np.transpose(audio_fft)
 
-# %% [markdown]
 # ## Calculate signal power
 
 # %% [code]
