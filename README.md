@@ -246,12 +246,12 @@ plt.imshow(cepstral_coefficents, aspect='auto', origin='lower');
 The MFCC is a good algorithm to extract high frequency and low frequency information. There are many parts that can be changed depending on the application. One thing that we might want to check is how the power is scattered across frequency band and choosing the filter amount based on that.
 
 <h1> References</h1>
-[1] https://en.wikipedia.org/wiki/Voice_frequency
-[2] https://en.wikipedia.org/wiki/Hearing_range 
-[3] https://www.sfu.ca/sonic-studio/handbook/Mel.html 
-[4] https://en.wikipedia.org/wiki/Mel_scale
-[5] http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/
-[6] https://librosa.github.io/librosa/
-[7] https://en.wikipedia.org/wiki/Window_function#Hamming_window
-[8] https://www.youtube.com/watch?v=Q2aEzeMDHMA
-[9] https://en.wikipedia.org/wiki/Discrete_cosine_transform
+[1] https://en.wikipedia.org/wiki/Voice_frequency <br/>
+[2] https://en.wikipedia.org/wiki/Hearing_range <br/>
+[3] https://www.sfu.ca/sonic-studio/handbook/Mel.html <br/> 
+[4] https://en.wikipedia.org/wiki/Mel_scale <br/>
+[5] http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/ <br/>
+[6] https://librosa.github.io/librosa/ <br/>
+[7] https://en.wikipedia.org/wiki/Window_function#Hamming_window <br/>
+[8] https://www.youtube.com/watch?v=Q2aEzeMDHMA <br/>
+[9] https://en.wikipedia.org/wiki/Discrete_cosine_transform <br/>
